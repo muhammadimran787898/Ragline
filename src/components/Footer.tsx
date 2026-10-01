@@ -1,6 +1,5 @@
-import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+
 export const Footer = () => {
   return (
     <footer id="footer" className="relative w-full overflow-hidden bg-black">
@@ -102,20 +101,12 @@ export const Footer = () => {
 
         {/* Bottom Section: Logo and Copyright */}
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <Image
-            src="/brand/enragline-logo.png"
-            alt="Enragline"
-            width={140}
-            height={28}
-            priority
-            className="h-6 sm:h-[26px] w-auto object-contain select-none"
-          />
-          {/* <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 0C16 8.83656 23.1634 16 32 16C23.1634 16 16 23.1634 16 32C16 23.1634 8.83656 16 0 16C8.83656 16 16 8.83656 16 0Z" fill="white"/>
             </svg>
             <span className="text-xl font-medium tracking-tight text-white">Enragline</span>
-          </div> */}
+          </div>
           <p className="text-[14px] text-white">
             © 2026 Enragline. All rights reserved.
           </p>

@@ -37,28 +37,11 @@ const neueMontreal = localFont({
 export const metadata: Metadata = {
   title: 'Enragline - AI/RAG SaaS Starter Kit & Production Foundation',
   description: 'Production-ready AI/RAG SaaS foundation with multi-tenant architecture and developer-first DX.',
-  icons: [
-    {
-      rel: 'apple-touch-icon',
-      url: '/apple-icon.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '32x32',
-      url: '/icon.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      url: '/icon.png',
-    },
-    {
-      rel: 'icon',
-      url: '/favicon.ico',
-    },
-  ],
+  icons: {
+    icon: [{ url: '/favicon-16x16.png?v=3', type: 'image/png' }],
+    shortcut: '/favicon-16x16.png?v=3',
+    apple: '/apple-icon.png',
+  },
 };
 
 export const viewport: Viewport = {

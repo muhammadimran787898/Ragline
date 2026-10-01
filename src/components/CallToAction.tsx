@@ -1,4 +1,3 @@
-import React from 'react';
 import { HeroButtons } from './HeroButtons';
 import { PentagonCornerNode } from './PentagonCornerNode';
 
