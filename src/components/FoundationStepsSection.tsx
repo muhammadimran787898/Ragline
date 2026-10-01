@@ -8,7 +8,7 @@ const STEP_LABELS = [
 ] as const;
 
 export const FoundationStepsSection = () => (
-  <section className="relative overflow-hidden border-b border-[#585858] bg-black">
+  <section id="how-it-works" className="relative overflow-hidden border-b border-[#585858] bg-black">
     <div className="relative h-7 w-full border-b border-[#585858] bg-black">
       <PentagonCornerNode className="left-0 top-0" />
       <PentagonCornerNode className="left-full top-0" />
@@ -53,9 +53,9 @@ export const FoundationStepsSection = () => (
         />
       </div>
 
-      <div className="relative mt-[96px] min-h-[420px]">
-        <div className="pointer-events-none absolute inset-x-[-150px] top-0 flex items-center justify-between">
-          <div className="relative h-[330px] w-[270px] overflow-hidden opacity-[0.34]">
+      <div className="relative mt-12 sm:mt-[96px] lg:min-h-[420px]">
+        <div className="pointer-events-none absolute inset-x-[-120px] top-0 hidden lg:flex items-center justify-between">
+          <div className="relative h-[330px] w-[270px] overflow-hidden opacity-60">
             <div
               className="absolute left-[-118px] top-0 w-[340px] rounded-[2px] bg-[linear-gradient(135deg,rgba(111,36,251,0.52),rgba(254,163,39,0.32))] p-[7px] shadow-[0_18px_60px_rgba(0,0,0,0.8)]"
               style={{ transform: 'perspective(760px) rotateY(58deg) rotateZ(1deg)' }}
@@ -66,12 +66,12 @@ export const FoundationStepsSection = () => (
                 width={508}
                 height={583}
                 unoptimized
-                className="block h-auto w-full select-none opacity-70"
+                className="block h-auto w-full select-none"
               />
             </div>
           </div>
 
-          <div className="relative h-[330px] w-[270px] overflow-hidden opacity-[0.34]">
+          <div className="relative h-[330px] w-[270px] overflow-hidden opacity-60">
             <div
               className="absolute right-[-118px] top-0 w-[340px] rounded-[2px] bg-[linear-gradient(135deg,rgba(111,36,251,0.45),rgba(254,163,39,0.34))] p-[7px] shadow-[0_18px_60px_rgba(0,0,0,0.8)]"
               style={{ transform: 'perspective(760px) rotateY(-58deg) rotateZ(-1deg)' }}
@@ -82,7 +82,7 @@ export const FoundationStepsSection = () => (
                 width={508}
                 height={583}
                 unoptimized
-                className="block h-auto w-full select-none opacity-70"
+                className="block h-auto w-full select-none"
               />
             </div>
           </div>

@@ -4,14 +4,14 @@ import { PentagonCornerNode } from './PentagonCornerNode';
 
 export const CallToAction = () => {
   return (
-    <section className="relative w-full bg-black overflow-hidden border-b border-[#585858]">
+    <section id="get-started" className="relative w-full bg-black overflow-hidden border-b border-[#585858]">
       {/* Background Subtle Gradient/Glow (Optional, based on the image there is a slight dark red/orange hue in the background at the bottom) */}
       <div className="absolute inset-0 z-0 pointer-events-none flex justify-center items-end opacity-40">
         <div className="h-[300px] w-[800px] rounded-full bg-[radial-gradient(ellipse_at_bottom,rgba(255,80,50,0.15)_0%,rgba(200,30,30,0.05)_40%,transparent_70%)] blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-[800px] px-6 py-24 sm:px-8 sm:py-32 lg:px-10 flex flex-col items-center text-center">
-        <h2 className="text-[44px] sm:text-[56px] lg:text-[72px] font-medium tracking-tight text-white leading-[1.05]">
+        <h2 className="text-[32px] sm:text-[56px] lg:text-[72px] font-medium tracking-tight text-white leading-[1.05]">
           Build the <span className="text-half-work">Product.</span>
           <br />
           Not the Plumbing.

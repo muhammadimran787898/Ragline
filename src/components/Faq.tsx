@@ -65,33 +65,33 @@ export const Faq = () => {
           {FAQ_ITEMS.map((item, index) => (
             <div key={index} className="border-b border-[#333333]">
               <button
+                type="button"
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
                 onClick={() => toggleItem(index)}
                 className="flex w-full items-center justify-between py-6 text-left focus:outline-none"
               >
                 <span className="text-lg sm:text-[19px] font-medium tracking-tight text-white">
                   {item.question}
                 </span>
-                <span className="ml-6 flex shrink-0 items-center justify-center text-[#8E8E93]">
-                  {openIndex === index ? (
-                    <svg width="14" height="2" viewBox="0 0 14 2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="14" height="2" rx="1" />
-                    </svg>
-                  ) : (
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6 6V0H8V6H14V8H8V14H6V8H0V6H6Z" />
-                    </svg>
-                  )}
+                <span aria-hidden="true" className="relative ml-6 size-3.5 shrink-0 text-[#8E8E93]">
+                  <span className="absolute top-1/2 h-0.5 w-full -translate-y-1/2 rounded-full bg-current" />
+                  <span className={`absolute top-1/2 h-0.5 w-full -translate-y-1/2 rounded-full bg-current transition-transform duration-300 motion-reduce:transition-none ${openIndex === index ? 'rotate-0' : 'rotate-90'}`} />
                 </span>
               </button>
               
-              <div 
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index ? 'max-h-[500px] opacity-100 pb-6' : 'max-h-0 opacity-0 pb-0'
+              <div
+                id={`faq-answer-${index}`}
+                aria-hidden={openIndex !== index}
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out motion-reduce:transition-none ${
+                  openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                 }`}
               >
-                <p className="max-w-[850px] text-[14px] leading-relaxed text-[#8E8E93]">
+                <div className="min-h-0 overflow-hidden">
+                <p className="max-w-[850px] pb-6 text-[14px] leading-relaxed text-[#8E8E93]">
                   {item.answer}
                 </p>
+                </div>
               </div>
             </div>
           ))}

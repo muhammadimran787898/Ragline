@@ -11,7 +11,7 @@ const GREEN_STRIP_FEATURES = [
 
 export const FoundationAlreadyBuilt = () => {
   return (
-    <section className="relative w-full bg-black overflow-hidden">
+    <section id="saas-foundation" className="relative w-full bg-black overflow-hidden">
       {/* Upper Area: Left Column (Headline + Text) & Right Column (Table + Glow) */}
       <div className="relative pt-12 sm:pt-16 lg:pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-0">
@@ -35,18 +35,6 @@ export const FoundationAlreadyBuilt = () => {
 
           {/* Right Column (7 cols): Table Showcase with Exact Gradient Width Frame */}
           <div className="relative lg:col-span-7 flex justify-end items-end pt-4 sm:pt-6 lg:pt-8 pl-2 sm:pl-4 lg:pl-6">
-            {/* Ambient Multi-Hue Aura Glow blooming outward into the canvas */}
-            <div className="absolute -inset-14 -left-28 pointer-events-none z-0 opacity-75 filter blur-3xl overflow-hidden">
-              <Image
-                src="/brand/crm-glow.png"
-                alt=""
-                fill
-                priority
-                unoptimized
-                className="object-cover object-left-top select-none"
-              />
-            </div>
-
             {/* Table Outer Tray displaying the exact wide gradient background from UI mockup (52px top, 86px left, 44px bottom) */}
             <div className="relative z-10 w-full overflow-hidden rounded-tl-3xl border-t border-l border-white/20 pt-[42px] sm:pt-[48px] lg:pt-[52px] pb-[36px] sm:pb-[40px] lg:pb-[44px] pl-[48px] sm:pl-[68px] lg:pl-[86px] pr-0 shadow-[-30px_-15px_80px_rgba(0,0,0,0.95)]">
               {/* Direct Multi-Hue Gradient Background Layer */}
@@ -92,7 +80,7 @@ export const FoundationAlreadyBuilt = () => {
               <FeaturePip variant="green" />
               <span
                 style={{ color: '#FFFFFF' }}
-                className="select-none text-lg font-normal tracking-[-0.01em] text-white"
+                className="select-none text-sm sm:text-lg font-normal tracking-[-0.01em] text-white"
               >
                 {feature}
               </span>

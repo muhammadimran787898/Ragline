@@ -36,7 +36,7 @@ const SECURITY_CARDS = [
 ] as const;
 
 export const SecurityFoundationSection = () => (
-  <section className="relative overflow-hidden border-b border-[#585858] bg-black">
+  <section id="security" className="relative overflow-hidden border-b border-[#585858] bg-black">
     {/* <div className="relative h-7 w-full border-b border-[#585858] bg-black">
       <PentagonCornerNode className="left-0 top-0" />
       <PentagonCornerNode className="left-full top-0" />

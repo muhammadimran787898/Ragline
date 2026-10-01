@@ -140,17 +140,14 @@ html, body {
   content: "";
   position: absolute;
   z-index: -2;
-  inset: -50% -20%;
+  inset: -20% -15%;
+  pointer-events: none;
   background:
-    /* Blazing white-hot core with golden flare blooming upwards at bottom right */
-    radial-gradient(ellipse 22% 40% at 66% 74%, #ffffff 0%, #ffffd2 22%, #ffdd82 42%, transparent 70%),
-    /* Rich fiery sunset orange/coral on the right */
-    radial-gradient(ellipse 36% 68% at 84% 48%, rgba(255, 115, 50, 0.98) 0%, rgba(246, 58, 15, 0.9) 45%, rgba(200, 35, 10, 0.35) 75%, transparent 92%),
-    /* Radiant neon magenta/pink blooming under "Building" */
-    radial-gradient(ellipse 34% 56% at 51% 68%, rgba(255, 45, 165, 0.98) 0%, rgba(185, 20, 235, 0.85) 42%, transparent 74%),
-    /* Violet/purple base under "Bui" */
-    radial-gradient(ellipse 28% 48% at 36% 73%, rgba(85, 22, 240, 0.9) 0%, rgba(40, 8, 155, 0.6) 45%, transparent 76%);
-  filter: blur(8px);
+    radial-gradient(ellipse 20% 30% at 65% 88%, #FFFFFF 0%, #FFE4E8 25%, transparent 75%),
+    radial-gradient(ellipse 36% 65% at 80% 78%, #FF705B 0%, #FD1C20 35%, rgba(253, 28, 32, 0.25) 65%, transparent 90%),
+    radial-gradient(ellipse 28% 40% at 52% 88%, #FF65CE 0%, #D52E93 40%, transparent 80%),
+    radial-gradient(ellipse 30% 45% at 36% 90%, #6F24FB 0%, rgba(79, 14, 170, 0.6) 45%, transparent 80%);
+  filter: blur(6px);
   transform: translateX(0%);
   transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -170,8 +167,9 @@ html, body {
   box-shadow: 0 14px 35px rgba(255, 80, 160, 0.25);
 }
 
-.gradient-button:hover::before {
-  transform: translateX(12%);
+.gradient-button:hover::before,
+.gradient-button:focus-visible::before {
+  transform: translateX(-14%);
 }
 
 .gradient-button:focus-visible {
@@ -191,67 +189,33 @@ html, body {
   box-shadow: 0 0 10px 2px rgba(254, 163, 39, 0.7), 0 0 4px 1px rgba(253, 28, 32, 0.9);
 }
 
-/* Dashboard preview container background glow strictly contained within boundary lines */
+/* Keep the dashboard edge lighting inside its frame. */
 .dashboard-backdrop-glow {
   position: absolute;
-  top: -48px;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   pointer-events: none;
-  overflow: hidden; /* STRICT: gradient will not move outside of the vertical boundary lines */
-  mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.75) 16px, #000 36px, #000 100%);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.75) 16px, #000 36px, #000 100%);
-}
-
-.dashboard-backdrop-glow::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  top: 25%;
-  width: 260px;
-  background: radial-gradient(ellipse 90% 75% at 0% 75%, rgba(51, 56, 171, 0.95) 0%, rgba(79, 14, 170, 0.8) 40%, rgba(36, 142, 251, 0.35) 65%, transparent 85%);
-  filter: blur(28px);
-}
-
-.dashboard-backdrop-glow::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 320px;
   background:
-    /* Top-right corner dense fiery glow so right top corner NEVER fades to black */
-    radial-gradient(ellipse 100% 60% at 100% 5%, rgba(254, 126, 83, 1) 0%, rgba(235, 95, 45, 0.95) 35%, rgba(190, 65, 30, 0.65) 65%, transparent 90%),
-    /* Mid and lower right vibrant pillar */
-    radial-gradient(ellipse 100% 75% at 100% 55%, rgba(254, 126, 83, 0.98) 0%, rgba(222, 94, 53, 0.9) 35%, rgba(160, 52, 22, 0.65) 65%, transparent 90%),
-    /* Full-height continuous vertical gradient along the right edge: color NEVER disappears */
-    linear-gradient(to left, rgba(245, 110, 60, 0.88) 0%, rgba(220, 85, 40, 0.55) 40%, transparent 85%);
-  filter: blur(26px);
-}
-
-.dashboard-backdrop-top-aura {
-  position: absolute;
-  top: -48px;
-  left: 0;
-  right: 0;
-  height: 290px;
-  background:
-    /* Broad top-right sunset aura connecting seamlessly to the right pillar */
-    radial-gradient(ellipse 65% 75% at 75% 25%, rgba(245, 115, 65, 0.9) 0%, rgba(215, 80, 40, 0.65) 40%, rgba(140, 35, 25, 0.35) 65%, transparent 85%),
-    /* Top center warm glow */
-    radial-gradient(ellipse 55% 60% at 50% 35%, rgba(210, 75, 45, 0.55) 0%, rgba(150, 35, 30, 0.35) 45%, transparent 75%),
-    /* Left violet accent */
-    radial-gradient(ellipse 45% 50% at 28% 45%, rgba(140, 30, 70, 0.35) 0%, transparent 70%);
-  filter: blur(36px);
-  pointer-events: none;
-  mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.75) 16px, #000 36px, #000 100%);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.75) 16px, #000 36px, #000 100%);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, transparent 25%),
+    radial-gradient(ellipse 18% 100% at 0% 100%, #3D43BD 0%, #42227C 48%, transparent 100%),
+    radial-gradient(ellipse 20% 110% at 100% 100%, #FF805E 0%, #CF4B20 45%, #63200B 75%, transparent 100%),
+    radial-gradient(ellipse 75% 40% at 75% 0%, rgba(165, 57, 22, 0.75) 0%, rgba(92, 27, 13, 0.45) 50%, transparent 100%);
 }
 
 .feature-pip-glow {
   background: radial-gradient(circle, #FFFFFF 0%, #FFFFFF 35%, #FF7896 70%, #FD1C50 100%);
   box-shadow: 0 0 10px 2px rgba(253, 28, 80, 0.85), 0 0 4px 1px rgba(255, 255, 255, 0.9);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

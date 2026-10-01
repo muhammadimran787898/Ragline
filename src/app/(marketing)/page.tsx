@@ -23,7 +23,7 @@ export default function IndexPage() {
   return (
     <div className="">
       {/* Main Architectural Continuous Framing Box with Sidebar Vertical Lines */}
-      <div className="relative mx-auto max-w-[1024px] border-x border-0 border-[#585858] bg-black">
+      <div className="relative mx-auto max-w-[1024px] border-0 lg:border-x border-[#585858] bg-black">
         {/* 0. Navbar */}
         <Navbar />
 
@@ -60,7 +60,7 @@ export default function IndexPage() {
               <h1 className="text-3xl sm:text-[35px] lg:text-[36px] font-medium tracking-[-0.025em] text-white leading-[1.15]">
                 Build Your AI SaaS.
                 <br />
-                <span className="whitespace-nowrap font-medium">
+                <span className="font-medium sm:whitespace-nowrap">
                   <span className="text-white">Skip the </span>
                   <span className="text-foundation-work font-medium">
                     Foundation
@@ -88,14 +88,13 @@ export default function IndexPage() {
 
 
         {/* 3. Dashboard Preview Showcase */}
-        <div className="relative w-full pt-3">
+        <div id="dashboard-preview" className="relative w-full overflow-hidden pt-8 sm:pt-10">
           {/* Background Glows strictly behind the Dashboard Card */}
           <div className="dashboard-backdrop-glow" />
-          <div className="dashboard-backdrop-top-aura" />
 
           {/* Dashboard Card Container */}
           <div className="relative z-10 px-4 sm:px-8 lg:px-10">
-            <div className="overflow-hidden rounded-t-2xl rounded-b-none border-t border-x border-white/15 bg-[#0a0a0c] shadow-[0_30px_90px_rgba(0,0,0,0.95)]">
+            <div className="overflow-hidden rounded-t-2xl rounded-b-none border-t border-x border-white/15 bg-[#0a0a0c] shadow-[0_12px_30px_rgba(0,0,0,0.55)]">
               <Image
                 src="/brand/dashboard-main.png"
                 alt="Enragline AI/RAG SaaS Foundation Dashboard"
@@ -117,13 +116,13 @@ export default function IndexPage() {
         </div>
 
         {/* 5. 4 Feature Items Strip */}
-        <div className="relative border-b border-[#585858] bg-black">
+        <div id="platform-features" className="relative border-b border-[#585858] bg-black">
           <div className="grid w-full grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 divide-x-0 md:divide-x divide-dotted divide-[#585858]">
             <div className="flex h-14 items-center justify-center gap-2 px-4 text-center">
               <FeaturePip />
               <span
-                style={{ color: '#FFFFFF' }}
-                className="select-none text-lg font-normal tracking-[-0.01em] text-white"
+                style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' }}
+                className="select-none text-sm sm:text-lg font-normal tracking-[-0.01em] text-white"
               >
                 Multi-Tenant
               </span>
@@ -132,8 +131,8 @@ export default function IndexPage() {
             <div className="flex h-14 items-center justify-center gap-2 px-4 text-center">
               <FeaturePip />
               <span
-                style={{ color: '#FFFFFF' }}
-                className="select-none text-lg font-normal tracking-[-0.01em] text-white"
+                style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' }}
+                className="select-none text-sm sm:text-lg font-normal tracking-[-0.01em] text-white"
               >
                 Provider Flexible
               </span>
@@ -142,8 +141,8 @@ export default function IndexPage() {
             <div className="flex h-14 items-center justify-center gap-2 px-4 text-center">
               <FeaturePip />
               <span
-                style={{ color: '#FFFFFF' }}
-                className="select-none text-lg font-normal tracking-[-0.01em] text-white"
+                style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' }}
+                className="select-none text-sm sm:text-lg font-normal tracking-[-0.01em] text-white"
               >
                 Self-Hostable
               </span>
@@ -152,8 +151,8 @@ export default function IndexPage() {
             <div className="flex h-14 items-center justify-center gap-2 px-4 text-center">
               <FeaturePip />
               <span
-                style={{ color: '#FFFFFF' }}
-                className="select-none text-lg font-normal tracking-[-0.01em] text-white"
+                style={{ color: '#FFFFFF', WebkitTextFillColor: '#FFFFFF' }}
+                className="select-none text-sm sm:text-lg font-normal tracking-[-0.01em] text-white"
               >
                 Built for Developers
               </span>
@@ -169,7 +168,7 @@ export default function IndexPage() {
         </div>
 
         {/* 7. 3-Pillar Container with Thin Hexagon Corner Nodes */}
-        <div className="relative border-b border-[#585858] bg-black">
+        <div id="benefits" className="relative border-b border-[#585858] bg-black">
           
 
           {/* 3 Columns divided by dashed vertical lines */}

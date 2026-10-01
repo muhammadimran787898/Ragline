@@ -20,7 +20,7 @@ const ROW_TWO_FEATURES = [
 
 export const AiFeatureWorkflow = () => {
   return (
-    <section className="relative w-full bg-black">
+    <section id="ai-workflow" className="relative w-full bg-black">
       {/* Top Section: First Headline & Sub-description */}
       <div className="px-6 pt-16 pb-6 sm:px-8 sm:pt-20 sm:pb-8 lg:px-10">
         <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-2 lg:gap-8">
@@ -88,12 +88,12 @@ export const AiFeatureWorkflow = () => {
           {ROW_ONE_FEATURES.map((feature) => (
             <div
               key={feature}
-              className="flex h-11 sm:h-12 items-center justify-center gap-2 px-2.5 sm:px-3 text-center"
+              className="flex h-11 sm:h-12 items-center justify-center gap-2 px-2.5 sm:px-3 text-center min-w-0"
             >
-              <FeaturePip />
+              <FeaturePip variant="red" />
               <span
                 style={{ color: '#FFFFFF' }}
-                className="select-none text-xs sm:text-[13px] font-normal tracking-[-0.01em] text-white whitespace-nowrap"
+                className="select-none text-[11px] sm:text-[13px] font-normal tracking-[-0.01em] text-white "
               >
                 {feature}
               </span>
@@ -106,12 +106,12 @@ export const AiFeatureWorkflow = () => {
           {ROW_TWO_FEATURES.map((feature) => (
             <div
               key={feature}
-              className="flex h-11 sm:h-12 items-center justify-center gap-2 px-2.5 sm:px-3 text-center"
+              className="flex h-11 sm:h-12 items-center justify-center gap-2 px-2.5 sm:px-3 text-center min-w-0"
             >
-              <FeaturePip />
+              <FeaturePip variant="red" />
               <span
                 style={{ color: '#FFFFFF' }}
-                className="select-none text-xs sm:text-[13px] font-normal tracking-[-0.01em] text-white whitespace-nowrap"
+                className="select-none text-[11px] sm:text-[13px] font-normal tracking-[-0.01em] text-white "
               >
                 {feature}
               </span>

@@ -11,7 +11,7 @@ type PentagonCornerNodeProps = {
 export const PentagonCornerNode = (props: PentagonCornerNodeProps) => (
   <svg
     viewBox="0 0 24 24"
-    className={`absolute size-[18px] -translate-x-1/2 -translate-y-1/2 fill-black stroke-[#585858] stroke-[1.5] overflow-visible pointer-events-none z-20 ${props.className ?? ''}`}
+    className={`absolute hidden lg:block size-[18px] -translate-x-1/2 -translate-y-1/2 fill-black stroke-[#585858] stroke-[1.5] overflow-visible pointer-events-none z-20 ${props.className ?? ''}`}
     aria-hidden="true"
   >
     <path

@@ -1,28 +1,28 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-
+import Image from 'next/image';
 export const Footer = () => {
   return (
-    <footer className="relative w-full overflow-hidden bg-black">
-      {/* Background Gradient Image */}
-      <div className="absolute inset-0 z-0 select-none">
-        {/* Mask to fade gradient to black at the top */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black via-black/60 to-transparent h-[50%] " />
-        <Image
-          src="/brand/footer-glow.png"
-          alt="Footer Gradient"
-          fill
-          priority
-          className="object-cover object-bottom"
-          unoptimized
-        />
-      </div>
+    <footer id="footer" className="relative w-full overflow-hidden bg-black">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          background: `
+            linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.85) 12%, rgba(0, 0, 0, 0.35) 40%, transparent 75%),
+            radial-gradient(ellipse 35% 55% at 53% 110%, #FFF6CD 0%, #FFE5A6 25%, transparent 75%),
+            radial-gradient(ellipse 48% 85% at 67% 105%, #FFC16E 0%, #EE8750 35%, #B54420 65%, transparent 100%),
+            radial-gradient(ellipse 50% 80% at 35% 105%, #E5C1E0 0%, #BD6B9C 40%, rgba(127, 53, 114, 0.7) 70%, transparent 100%),
+            radial-gradient(ellipse 40% 75% at 0% 110%, #4F2D95 0%, #532D75 45%, transparent 100%),
+            linear-gradient(180deg, #000000 0%, #24100E 45%, #6F301D 100%)
+          `,
+        }}
+      />
       <div className="relative z-10 mx-auto w-full max-w-[1024px] px-8 pt-32 pb-16 sm:px-12 sm:pt-48 sm:pb-24">
         {/* Top Section: Links and Socials */}
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
           {/* Links Columns */}
-          <div className="grid grid-cols-2 gap-x-12 gap-y-12 sm:grid-cols-3 sm:gap-x-24">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 sm:gap-x-24">
             {/* Product */}
             <div className="flex flex-col gap-4">
               <h3 className="text-[17px] font-medium tracking-tight text-white">Product</h3>
@@ -102,12 +102,20 @@ export const Footer = () => {
 
         {/* Bottom Section: Logo and Copyright */}
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-2">
+            <Image
+            src="/brand/enragline-logo.png"
+            alt="Enragline"
+            width={140}
+            height={28}
+            priority
+            className="h-6 sm:h-[26px] w-auto object-contain select-none"
+          />
+          {/* <div className="flex items-center gap-2">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16 0C16 8.83656 23.1634 16 32 16C23.1634 16 16 23.1634 16 32C16 23.1634 8.83656 16 0 16C8.83656 16 16 8.83656 16 0Z" fill="white"/>
             </svg>
             <span className="text-xl font-medium tracking-tight text-white">Enragline</span>
-          </div>
+          </div> */}
           <p className="text-[14px] text-white">
             © 2026 Enragline. All rights reserved.
           </p>

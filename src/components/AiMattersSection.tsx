@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { PentagonCornerNode } from '@/components/PentagonCornerNode';
 
 const FEATURE_ROWS = [
   ['Multi-Tenant SaaS', 'Tenant-Aware Knowledge', 'AI Usage & Monetization'],
@@ -7,11 +6,11 @@ const FEATURE_ROWS = [
 ] as const;
 
 export const AiMattersSection = () => (
-  <section className="relative overflow-hidden border-b border-[#585858] bg-black">
+  <section id="ai-platform" className="relative overflow-hidden border-b border-[#585858] bg-black">
    
 
-    <div className="relative min-h-[930px] px-6 pt-[86px] sm:px-8 lg:px-10">
-      <div className="relative z-20 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+    <div className="relative pt-12 sm:pt-16 lg:pt-[86px]">
+      <div className="relative z-20 grid grid-cols-1 gap-8 px-6 sm:px-8 lg:grid-cols-2 lg:gap-10 lg:px-10">
         <h2 className="text-3xl font-medium leading-[1.16] tracking-[-0.025em] text-white sm:text-[35px] lg:text-[36px]">
           Everything Around
           <br />
@@ -31,16 +30,16 @@ export const AiMattersSection = () => (
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 top-[220px] h-[640px] overflow-hidden">
-        <div className="absolute left-1/2 top-[246px] z-[35] h-[218px] w-[570px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,#AFFFFF_0%,rgba(125,247,255,0.6)_17%,rgba(36,142,251,0.52)_38%,rgba(14,55,170,0.28)_60%,transparent_78%)] blur-2xl mix-blend-screen" />
-        <div className="absolute left-1/2 top-[104px] z-[30] h-[220px] w-[420px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,#FFFFFF_0%,rgba(255,255,255,0.38)_13%,rgba(254,163,39,0.24)_27%,rgba(111,36,251,0.18)_48%,rgba(36,142,251,0.13)_62%,transparent_76%)] blur-2xl mix-blend-screen" />
+      <div className="pointer-events-none relative mx-auto mt-12 mb-16 aspect-[6/5] w-full max-w-[1200px] overflow-hidden sm:mt-16 lg:mt-20">
+        <div className="absolute left-1/2 top-[22%] z-[15] h-[18%] w-[54%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,#70CFFF_0%,rgba(72,162,255,0.7)_17%,rgba(36,110,251,0.5)_38%,rgba(14,55,170,0.2)_60%,transparent_78%)] blur-2xl mix-blend-screen" />
+        <div className="absolute left-1/2 top-[10%] z-[30] h-[22%] w-[35%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,#FFFFFF_0%,rgba(255,255,255,0.38)_13%,rgba(254,163,39,0.24)_27%,rgba(111,36,251,0.18)_48%,rgba(36,142,251,0.13)_62%,transparent_76%)] blur-2xl mix-blend-screen" />
         <Image
           src="/brand/ai-matters-cone.svg"
           alt=""
           width={1246}
           height={654}
           unoptimized
-          className="absolute left-1/2 top-[244px] z-0 h-auto w-[1060px] max-w-none -translate-x-1/2 select-none opacity-100"
+          className="absolute left-1/2 top-[17%] z-0 h-auto w-full max-w-none -translate-x-1/2 select-none opacity-100"
         />
         <Image
           src="/brand/ai-matters-ambient.svg"
@@ -48,7 +47,7 @@ export const AiMattersSection = () => (
           width={953}
           height={903}
           unoptimized
-          className="absolute left-1/2 top-[24px] z-10 h-auto w-[740px] max-w-none -translate-x-1/2 select-none opacity-95 mix-blend-screen"
+          className="absolute left-1/2 top-[2%] z-10 h-auto w-[62%] max-w-none -translate-x-1/2 select-none opacity-35 mix-blend-screen"
         />
         <Image
           src="/brand/ai-matters-card-left.svg"
@@ -56,7 +55,7 @@ export const AiMattersSection = () => (
           width={456}
           height={305}
           unoptimized
-          className="absolute left-[15%] top-[358px] z-20 h-auto w-[390px] select-none opacity-90"
+          className="absolute left-[15%] top-[42%] z-20 h-auto w-[39%] select-none opacity-90"
         />
         <Image
           src="/brand/ai-matters-card-right.svg"
@@ -64,7 +63,7 @@ export const AiMattersSection = () => (
           width={578}
           height={387}
           unoptimized
-          className="absolute right-[12%] top-[262px] z-20 h-auto w-[510px] select-none opacity-90"
+          className="absolute right-[15%] top-[32%] z-20 h-auto w-[50%] select-none opacity-90"
         />
         <Image
           src="/brand/ai-matters-card-front.svg"
@@ -72,7 +71,7 @@ export const AiMattersSection = () => (
           width={363}
           height={243}
           unoptimized
-          className="absolute left-[42%] top-[505px] z-20 h-auto w-[330px] select-none opacity-90"
+          className="absolute left-[40%] top-[59%] z-20 h-auto w-[31%] select-none opacity-90"
         />
         <Image
           src="/brand/ai-matters-logo-tile.svg"
@@ -81,7 +80,7 @@ export const AiMattersSection = () => (
           height={400}
           priority
           unoptimized
-          className="absolute left-1/2 top-[52px] z-40 h-auto w-[590px] max-w-none -translate-x-1/2 select-none drop-shadow-[0_0_34px_rgba(255,255,255,0.26)]"
+          className="absolute left-1/2 top-0 z-40 h-auto w-[50%] max-w-none -translate-x-1/2 select-none drop-shadow-[0_0_24px_rgba(90,170,255,0.18)]"
         />
       </div>
     </div>
