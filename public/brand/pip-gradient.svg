@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+  <defs>
+    <radialGradient id="pipWhite" cx="25%" cy="78%" r="45%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#FFEBF2" />
+      <stop offset="65%" stop-color="#F472B6" />
+      <stop offset="100%" stop-color="#F472B6" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="pipOrange" cx="75%" cy="25%" r="55%">
+      <stop offset="0%" stop-color="#FB923C" />
+      <stop offset="55%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#EF4444" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="pipBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E11D48" />
+      <stop offset="50%" stop-color="#9333EA" />
+      <stop offset="100%" stop-color="#4F46E5" />
+    </linearGradient>
+  </defs>
+  <rect width="10" height="10" rx="2" fill="url(#pipBase)" />
+  <rect width="10" height="10" rx="2" fill="url(#pipOrange)" />
+  <rect width="10" height="10" rx="2" fill="url(#pipWhite)" />
+</svg>

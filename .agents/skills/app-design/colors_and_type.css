@@ -1,0 +1,170 @@
+/* ============================================================
+   ENRAGLINE — Colors & Type Tokens
+   Brand: AI/RAG SaaS Starter Kit & Production Foundation
+   Import this file, then use the CSS variables below.
+   ------------------------------------------------------------
+   Fonts: Neue Montreal / Inter (display, UI, headings & body)
+   and IBM Plex Mono (code/metrics). Loaded from Google Fonts.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ============================================================
+     1. CANONICAL BRAND PALETTE (100% Match from Master Swatches)
+     ============================================================ */
+  --color-black:          #000000;   /* HEX: #000000 | RGB: (0, 0, 0)       | CMYK: (0, 0, 0, 100) */
+  --color-white:          #FFFFFF;   /* HEX: #FFFFFF | RGB: (255, 255, 255) | CMYK: (0, 0, 0, 0)   */
+  --color-blue-deep:      #0E37AA;   /* HEX: #0E37AA | RGB: (14, 55, 170)   | CMYK: (92, 68, 0, 33) */
+  --color-blue-electric:  #248EFB;   /* HEX: #248EFB | RGB: (36, 142, 251)  | CMYK: (86, 43, 0, 2)  */
+  --color-purple-deep:    #4F0EAA;   /* HEX: #4F0EAA | RGB: (79, 14, 170)   | CMYK: (54, 92, 0, 33) */
+  --color-purple-vivid:   #6F24FB;   /* HEX: #6F24FB | RGB: (111, 36, 251)  | CMYK: (56, 86, 0, 2)  */
+  --color-red-vivid:      #FD1C20;   /* HEX: #FD1C20 | RGB: (253, 28, 32)   | CMYK: (0, 89, 87, 1)  */
+  --color-orange-amber:   #FEA327;   /* HEX: #FEA327 | RGB: (254, 163, 39)  | CMYK: (0, 36, 85, 0)  */
+  --color-yellow-neon:    #FFF52F;   /* HEX: #FFF52F | RGB: (255, 245, 47)  | CMYK: (0, 4, 82, 0)   */
+
+  /* ============================================================
+     2. SEMANTIC BRAND ALIASES & ROLES
+     ============================================================ */
+  --primary-blue:         var(--color-blue-electric);
+  --primary-blue-deep:    var(--color-blue-deep);
+  --primary-purple:       var(--color-purple-vivid);
+  --primary-purple-deep:  var(--color-purple-deep);
+  --accent-red:           var(--color-red-vivid);
+  --accent-orange:        var(--color-orange-amber);
+  --accent-yellow:        var(--color-yellow-neon);
+
+  /* Neutrals & Tactile Surfaces (Dark First Design) */
+  --bg-canvas:            #0A0B0E;   /* Deep canvas background */
+  --bg-card-outer:        #111217;   /* Outer card tray */
+  --bg-card-inner:        #16171E;   /* Inner 3D card content container */
+  --bg-card-hover:        #1C1E27;   /* Card cell hover state */
+  --border-outer:         #22242D;   /* Dark outer border */
+  --border-subtle:        rgba(255, 255, 255, 0.08); /* Hairline divider */
+  --border-highlight:     rgba(255, 255, 255, 0.14); /* Top highlight bevel */
+
+  --text-primary:         #FFFFFF;
+  --text-secondary:       #8E8E93;
+  --text-muted:           #636366;
+  --text-dim:             #48484A;
+
+  /* Data & Model Colors */
+  --model-gpt4:           var(--color-orange-amber);  /* #FEA327 */
+  --model-gpt35:          var(--color-blue-electric); /* #248EFB */
+  --model-claude:         var(--color-purple-vivid);  /* #6F24FB */
+  --model-llama:          var(--color-purple-deep);   /* #4F0EAA */
+  --edition-community:    var(--color-orange-amber);  /* #FEA327 */
+  --edition-standard:     var(--color-purple-vivid);  /* #6F24FB */
+  --edition-pro:          var(--color-blue-electric); /* #248EFB */
+  --edition-enterprise:   var(--color-purple-deep);   /* #4F0EAA */
+
+  /* ============================================================
+     3. SIGNATURE BRAND GRADIENTS
+     ============================================================ */
+  /* Hero Fiery "Foundation" text gradient */
+  --grad-fire-text:       linear-gradient(90deg, #FD1C20 0%, #FEA327 50%, #FFF52F 100%);
+  /* Primary Action "Start Building" button gradient */
+  --grad-btn-start:       linear-gradient(135deg, #FD1C20 0%, #FEA327 100%);
+  /* Full fiery spectrum ramp */
+  --grad-fire-spectrum:   linear-gradient(135deg, #FD1C20 0%, #FEA327 50%, #FFF52F 100%);
+  /* Electric blue dual ramp */
+  --grad-blue:            linear-gradient(135deg, #248EFB 0%, #0E37AA 100%);
+  /* Vivid purple dual ramp */
+  --grad-purple:          linear-gradient(135deg, #6F24FB 0%, #4F0EAA 100%);
+  /* Ambient canvas backdrop mesh */
+  --grad-ambient-mesh:    radial-gradient(circle at 10% 20%, rgba(111, 36, 251, 0.16) 0%, transparent 45%),
+                          radial-gradient(circle at 90% 25%, rgba(253, 28, 32, 0.14) 0%, transparent 45%);
+
+  /* ============================================================
+     4. GLOWS & 3D TACTILE SHADOWS
+     ============================================================ */
+  --glow-fire-button:     0 4px 20px -2px rgba(253, 28, 32, 0.45), 0 0 35px -4px rgba(254, 163, 39, 0.25);
+  --glow-feature-pip:     0 0 10px 2px rgba(254, 163, 39, 0.7), 0 0 4px 1px rgba(253, 28, 32, 0.9);
+  --shadow-card-inner:    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+                          inset 0 10px 16px -4px rgba(255, 255, 255, 0.03),
+                          inset 8px 0 14px -4px rgba(255, 255, 255, 0.02),
+                          inset -8px 0 14px -4px rgba(255, 255, 255, 0.02);
+  --shadow-main-layout:   inset 0 1px 0 0 rgba(255, 255, 255, 0.10),
+                          inset 0 12px 24px -6px rgba(255, 255, 255, 0.04),
+                          inset 12px 0 24px -6px rgba(255, 255, 255, 0.03),
+                          inset -12px 0 24px -6px rgba(255, 255, 255, 0.03);
+
+  /* ============================================================
+     5. RADII & SPACING SCALE
+     ============================================================ */
+  --radius-xs:            4px;
+  --radius-sm:            6px;
+  --radius-md:            10px;
+  --radius-lg:            14px;
+  --radius-xl:            16px;
+  --radius-2xl:           20px;
+  --radius-pill:          9999px;
+
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 20px;  --space-6: 24px;  --space-7: 32px;  --space-8: 48px;
+  --space-9: 64px;  --space-10: 96px;
+
+  /* ============================================================
+     6. TYPOGRAPHY
+     ============================================================ */
+  --font-display:         'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-ui:              'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body:            'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:            'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+  --hero-title:           600 48px/1.1 var(--font-display);
+  --h1:                   600 36px/1.15 var(--font-display);
+  --h2:                   600 28px/1.2 var(--font-display);
+  --h3:                   500 22px/1.25 var(--font-ui);
+  --h4:                   500 18px/1.3 var(--font-ui);
+  --body-lg:              400 16px/1.55 var(--font-body);
+  --body:                 400 14px/1.5 var(--font-body);
+  --body-sm:              400 13px/1.45 var(--font-body);
+  --caption:              400 11px/1.4 var(--font-body);
+  --badge:                500 11px/1.2 var(--font-mono);
+}
+
+/* ============================================================
+   7. UTILITY CLASSES
+   ============================================================ */
+.en-text-fire {
+  background: var(--grad-fire-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.en-btn-start {
+  background: var(--grad-btn-start);
+  color: #FFFFFF;
+  box-shadow: var(--glow-fire-button);
+  border-radius: var(--radius-lg);
+  font-weight: 500;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.en-btn-start:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px -2px rgba(253, 28, 32, 0.6), 0 0 45px -4px rgba(254, 163, 39, 0.35);
+}
+
+.en-btn-explore {
+  background: #111217;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.en-btn-explore:hover {
+  background: #1A1C24;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.en-pip-glow {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFF52F 0%, #FEA327 50%, #FD1C20 100%);
+  box-shadow: var(--glow-feature-pip);
+  display: inline-block;
+}
