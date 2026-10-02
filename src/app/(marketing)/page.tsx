@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { ArchitectureFlow } from '@/components/ArchitectureFlow';
 import { AiMattersSection } from '@/components/AiMattersSection';
 import { AiFeatureWorkflow } from '@/components/AiFeatureWorkflow';
+import { DashboardPreview } from '@/components/DashboardPreview';
 import { FeaturePip } from '@/components/FeaturePip';
 import { FoundationAlreadyBuilt } from '@/components/FoundationAlreadyBuilt';
 import { FoundationStepsSection } from '@/components/FoundationStepsSection';
+import { HeroMotion } from '@/components/HeroMotion';
 import { HeroButtons } from '@/components/HeroButtons';
 import { Navbar } from '@/components/Navbar';
 import { PentagonCornerNode } from '@/components/PentagonCornerNode';
@@ -21,14 +24,14 @@ export const metadata: Metadata = {
 
 export default function IndexPage() {
   return (
-    <div className="">
-      {/* Main Architectural Continuous Framing Box with Sidebar Vertical Lines */}
-      <div className="relative mx-auto max-w-[1024px] border-0 lg:border-x border-[#585858] bg-black">
-        {/* 0. Navbar */}
-        <Navbar />
+    <div className="marketing-page overflow-x-clip">
+      <Navbar />
+      {/* Centered content with full-width architectural backgrounds */}
+      <div className="relative mx-auto max-w-[1024px] bg-black">
+
 
         {/* 1. Top Architectural Hatched Divider Band (Below Navbar) */}
-        <div className="relative h-9 w-full border-b border-[#585858] bg-black">
+        <div className="full-width-divider relative h-9 w-full border-b border-[#585858] bg-black">
           <PentagonCornerNode className="left-0 top-0" />
           <PentagonCornerNode className="left-full top-0" />
          
@@ -36,8 +39,9 @@ export default function IndexPage() {
         </div>
 
         {/* 2. Hero Overview Section */}
-        <section id="overview" className=" mt-8 mb-18 px-6 py-8 sm:px-8 sm:pt-14 sm:pb-16 lg:px-10">
-          <div className="grid grid-cols-1 items-end gap-6 lg:grid-cols-2 lg:gap-8">
+        <section id="overview" className="hero-overview relative isolate py-16 sm:py-20 lg:py-24">
+          <HeroMotion />
+          <div className="hero-content relative z-10 mx-auto grid max-w-[1600px] grid-cols-1 items-center gap-10 px-6 text-left sm:px-8 lg:grid-cols-[1.25fr_1fr] lg:w-[80%] lg:gap-16 lg:px-0">
             {/* Left Column: Badge + Main Headline */}
             <div>
               {/* Category Pill Badge with Brand Icon */}
@@ -57,10 +61,10 @@ export default function IndexPage() {
               </div>
 
               {/* Main Hero Headline */}
-              <h1 className="text-3xl sm:text-[35px] lg:text-[36px] font-medium tracking-[-0.025em] text-white leading-[1.15]">
+              <h1 className="text-[32px] sm:text-[40px] lg:text-[38px] xl:text-[48px] font-medium tracking-[-0.025em] text-white leading-[1.15]">
                 Build Your AI SaaS.
                 <br />
-                <span className="font-medium sm:whitespace-nowrap">
+                <span className="font-medium">
                   <span className="text-white">Skip the </span>
                   <span className="text-foundation-work font-medium">
                     Foundation
@@ -71,11 +75,9 @@ export default function IndexPage() {
             </div>
 
             {/* Right Column: Description + Buttons */}
-            <div className="flex flex-col justify-end">
-              <p className="mb-6 text-[13.5px] sm:text-[14px] text-[#8E8E93] leading-[1.6] font-normal">
-                Enragline gives developers and software teams a production-
-                <br className="hidden sm:inline" />
-                focused foundation for building AI-powered SaaS products.
+            <div className="flex max-w-xl flex-col items-start lg:justify-self-end">
+              <p className="mb-7 text-[16px] sm:text-[18px] text-[#8E8E93] leading-[1.6] font-normal">
+                Enragline gives developers and software teams a production-focused foundation for building AI-powered SaaS products.
               </p>
 
               <HeroButtons
@@ -94,22 +96,12 @@ export default function IndexPage() {
 
           {/* Dashboard Card Container */}
           <div className="relative z-10 px-4 sm:px-8 lg:px-10">
-            <div className="overflow-hidden rounded-t-2xl rounded-b-none border-t border-x border-white/15 bg-[#0a0a0c] shadow-[0_12px_30px_rgba(0,0,0,0.55)]">
-              <Image
-                src="/brand/dashboard-main.png"
-                alt="Enragline AI/RAG SaaS Foundation Dashboard"
-                width={1024}
-                height={620}
-                priority
-                unoptimized
-                className="block h-auto w-full rounded-t-2xl rounded-b-none object-contain select-none"
-              />
-            </div>
+            <DashboardPreview />
           </div>
         </div>
 
         {/* 4. Upper Architectural Hatched Divider Band (Above 4-Feature Strip) */}
-        <div className="relative h-7 w-full border-t border-b border-[#585858] bg-black">
+        <div className="full-width-divider relative h-7 w-full border-t border-b border-[#585858] bg-black">
           
           
           <div className="size-full bg-[repeating-linear-gradient(45deg,#585858_0,#585858_1px,transparent_1px,transparent_8px)]" />
@@ -161,7 +153,7 @@ export default function IndexPage() {
         </div>
 
         {/* 6. Lower Architectural Hatched Divider Band (Below 4-Feature Strip) */}
-        <div className="relative h-9 w-full border-b border-[#585858] bg-black">
+        <div className="full-width-divider relative h-9 w-full border-b border-[#585858] bg-black">
           <PentagonCornerNode className="left-0 -bottom-4" />
           <PentagonCornerNode className="left-full -bottom-4" />
           <div className="size-full bg-[repeating-linear-gradient(45deg,#585858_0,#585858_1px,transparent_1px,transparent_8px)]" />
@@ -171,74 +163,7 @@ export default function IndexPage() {
         <div id="benefits" className="relative border-b border-[#585858] bg-black">
           
 
-          {/* 3 Columns divided by dashed vertical lines */}
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 divide-x-0 md:divide-x divide-dashed divide-[#585858]">
-            {/* Column 1: Built for AI SaaS */}
-            <div className="flex flex-col justify-between px-8 py-12 sm:px-10 sm:py-14 lg:px-12 lg:py-16">
-              <div className="flex h-52 items-center justify-center">
-                <Image
-                  src="/brand/rag3.svg"
-                  alt="Built for AI SaaS Architecture"
-                  width={340}
-                  height={200}
-                  unoptimized
-                  className="h-auto max-h-48 w-auto max-w-full object-contain select-none"
-                />
-              </div>
-              <div className="mt-8">
-                <h3 className="text-xl font-medium tracking-tight text-white sm:text-2xl">
-                  Built for AI SaaS
-                </h3>
-                <p className="mt-2.5 text-sm text-[#8E8E93] leading-relaxed">
-                  Start with the SaaS and AI infrastructure required to turn an AI idea into a commercial application.
-                </p>
-              </div>
-            </div>
-
-            {/* Column 2: RAG-First Architecture */}
-            <div className="flex flex-col justify-between px-8 py-12 sm:px-10 sm:py-14 lg:px-12 lg:py-16">
-              <div className="flex h-52 items-center justify-center">
-                <Image
-                  src="/brand/rag2.svg"
-                  alt="RAG-First Architecture Pipeline"
-                  width={340}
-                  height={200}
-                  unoptimized
-                  className="h-auto max-h-48 w-auto max-w-full object-contain select-none"
-                />
-              </div>
-              <div className="mt-8">
-                <h3 className="text-xl font-medium tracking-tight text-white sm:text-2xl">
-                  RAG-First Architecture
-                </h3>
-                <p className="mt-2.5 text-sm text-[#8E8E93] leading-relaxed">
-                  Process knowledge, generate embeddings, retrieve context, and deliver grounded AI responses.
-                </p>
-              </div>
-            </div>
-
-            {/* Column 3: Deploy Anywhere */}
-            <div className="flex flex-col justify-between px-8 py-12 sm:px-10 sm:py-14 lg:px-12 lg:py-16">
-              <div className="flex h-52 items-center justify-center">
-                <Image
-                  src="/brand/rag1.svg"
-                  alt="Deploy Anywhere Hybrid Infrastructure"
-                  width={340}
-                  height={200}
-                  unoptimized
-                  className="h-auto max-h-48 w-auto max-w-full object-contain select-none"
-                />
-              </div>
-              <div className="mt-8">
-                <h3 className="text-xl font-medium tracking-tight text-white sm:text-2xl">
-                  Deploy Anywhere
-                </h3>
-                <p className="mt-2.5 text-sm text-[#8E8E93] leading-relaxed">
-                  Run your application in the cloud, on a VPS, on-premises, or within private infrastructure.
-                </p>
-              </div>
-            </div>
-          </div>
+          <ArchitectureFlow />
         </div>
         
 
@@ -249,8 +174,8 @@ export default function IndexPage() {
         <FoundationAlreadyBuilt />
 
         {/* 10. RAG Pipeline Dashboard Showcase */}
-        <section id="rag-pipeline" className="relative overflow-hidden border-b border-[#585858] bg-black">
-          {/* <div className="relative h-7 w-full border-b border-[#585858] bg-black">
+        <section id="rag-pipeline" className="relative border-b border-[#585858] bg-black">
+          {/* <div className="full-width-divider relative h-7 w-full border-b border-[#585858] bg-black">
             <PentagonCornerNode className="left-0 top-0" />
             <PentagonCornerNode className="left-full top-0" />
             <div className="size-full bg-[repeating-linear-gradient(45deg,#585858_0,#585858_1px,transparent_1px,transparent_8px)]" />
@@ -275,13 +200,13 @@ export default function IndexPage() {
             </div>
 
             <div className="relative mt-20 sm:mt-24">
-              <div className="absolute -inset-x-4 -top-16 bottom-0 pointer-events-none">
+              <div className="rag-ambient-motion absolute -inset-x-4 -top-16 bottom-0 pointer-events-none">
                 <div className="absolute left-0 top-8 h-[72%] w-[42%] rounded-full bg-[radial-gradient(ellipse_at_left,#248EFB_0%,rgba(14,55,170,0.72)_38%,transparent_72%)] blur-2xl" />
                 <div className="absolute right-0 bottom-0 h-[78%] w-[42%] rounded-full bg-[radial-gradient(ellipse_at_right,#FEA327_0%,rgba(253,28,32,0.58)_36%,transparent_74%)] blur-2xl" />
                 <div className="absolute inset-x-16 bottom-0 h-28 bg-[linear-gradient(90deg,rgba(36,142,251,0.22)_0%,rgba(111,36,251,0.16)_38%,rgba(253,28,32,0.18)_64%,rgba(254,163,39,0.34)_100%)] blur-3xl" />
               </div>
 
-              <div className="relative rounded-[31px] bg-[linear-gradient(135deg,#248EFB_0%,#0E37AA_24%,#18191D_42%,#16171A_58%,#FD1C20_78%,#FEA327_100%)] p-[10px] shadow-[0_30px_90px_rgba(0,0,0,0.95),0_0_44px_rgba(36,142,251,0.34),0_0_48px_rgba(254,163,39,0.28)]">
+              <div className="rag-gradient-frame relative rounded-[31px] bg-[linear-gradient(135deg,#248EFB_0%,#0E37AA_24%,#18191D_42%,#16171A_58%,#FD1C20_78%,#FEA327_100%)] p-[10px] shadow-[0_30px_90px_rgba(0,0,0,0.95),0_0_44px_rgba(36,142,251,0.34),0_0_48px_rgba(254,163,39,0.28)]">
                 <div className="overflow-hidden rounded-[23px] border border-white/10 bg-[#0a0a0c]">
                   <Image
                     src="/brand/dashboard-main.png"
@@ -297,7 +222,7 @@ export default function IndexPage() {
             </div>
           </div>
 
-          <div className="relative h-7 w-full border-y border-[#585858] bg-black">
+          <div className="full-width-divider relative h-7 w-full border-y border-[#585858] bg-black">
             <div className="size-full bg-[repeating-linear-gradient(45deg,#585858_0,#585858_1px,transparent_1px,transparent_8px)]" />
           </div>
 
@@ -308,7 +233,7 @@ export default function IndexPage() {
             </p>
           </div>
 
-          <div className="relative h-9 w-full bg-black">
+          <div className="full-width-divider relative h-9 w-full bg-black">
             <PentagonCornerNode className="left-0 bottom-0" />
             <PentagonCornerNode className="left-full bottom-0" />
             <div className="size-full bg-[repeating-linear-gradient(45deg,#585858_0,#585858_1px,transparent_1px,transparent_8px)]" />

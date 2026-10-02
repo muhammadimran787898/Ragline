@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { FeaturePip } from '@/components/FeaturePip';
 import { PentagonCornerNode } from '@/components/PentagonCornerNode';
@@ -11,12 +13,24 @@ const GREEN_STRIP_FEATURES = [
 
 export const FoundationAlreadyBuilt = () => {
   return (
-    <section id="saas-foundation" className="relative w-full bg-black overflow-hidden">
+    <section id="saas-foundation" className="foundation-motion relative w-full bg-black" ref={(element) => {
+      if (!element) return;
+      let visible = false;
+      const update = () => { element.dataset.running = String(visible && !document.hidden); };
+      const observer = new IntersectionObserver(([entry]) => {
+        visible = entry?.isIntersecting ?? false;
+        if (visible) element.dataset.revealed = 'true';
+        update();
+      }, { threshold: 0.15 });
+      observer.observe(element);
+      document.addEventListener('visibilitychange', update);
+      return () => { observer.disconnect(); document.removeEventListener('visibilitychange', update); };
+    }}>
       {/* Upper Area: Left Column (Headline + Text) & Right Column (Table + Glow) */}
       <div className="relative pt-12 sm:pt-16 lg:pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-0">
           {/* Left Column (5 cols): Text Content */}
-          <div className="px-6 sm:px-8 lg:pl-10 lg:pr-6 lg:col-span-5 z-10 py-6 lg:py-12 font-medium">
+          <div className="foundation-copy px-6 sm:px-8 lg:pl-10 lg:pr-6 lg:col-span-5 z-10 py-6 lg:py-12 font-medium">
             <h2 className="text-3xl sm:text-[35px] lg:text-[36px]  tracking-[-0.025em] text-white leading-[1.15]">
               Start With the
               <br />
@@ -36,9 +50,9 @@ export const FoundationAlreadyBuilt = () => {
           {/* Right Column (7 cols): Table Showcase with Exact Gradient Width Frame */}
           <div className="relative lg:col-span-7 flex justify-end items-end pt-4 sm:pt-6 lg:pt-8 pl-2 sm:pl-4 lg:pl-6">
             {/* Table Outer Tray displaying the exact wide gradient background from UI mockup (52px top, 86px left, 44px bottom) */}
-            <div className="relative z-10 w-full overflow-hidden rounded-tl-3xl border-t border-l border-white/20 pt-[42px] sm:pt-[48px] lg:pt-[52px] pb-[36px] sm:pb-[40px] lg:pb-[44px] pl-[48px] sm:pl-[68px] lg:pl-[86px] pr-0 shadow-[-30px_-15px_80px_rgba(0,0,0,0.95)]">
+            <div className="foundation-tray relative z-10 w-full overflow-hidden rounded-tl-3xl border-t border-l border-white/20 pt-[42px] sm:pt-[48px] lg:pt-[52px] pb-[36px] sm:pb-[40px] lg:pb-[44px] pl-[48px] sm:pl-[68px] lg:pl-[86px] pr-0 shadow-[-30px_-15px_80px_rgba(0,0,0,0.95)]">
               {/* Direct Multi-Hue Gradient Background Layer */}
-              <div className="absolute inset-0 z-0">
+              <div className="foundation-glow absolute inset-0 z-0">
                 <Image
                   src="/brand/crm-glow.png"
                   alt=""
@@ -50,7 +64,7 @@ export const FoundationAlreadyBuilt = () => {
               </div>
 
               {/* Charcoal Outer Window Frame matching mockup */}
-              <div className="relative z-10 w-full overflow-hidden rounded-tl-2xl border-t border-l border-white/25 bg-[#3a3b40] pt-[18px] pb-[18px] pl-[8px] pr-0 shadow-2xl">
+              <div className="foundation-window relative z-10 w-full overflow-hidden rounded-tl-2xl border-t border-l border-white/25 bg-[#3a3b40] pt-[18px] pb-[18px] pl-[8px] pr-0 shadow-2xl">
                 {/* Inner Table Image Container */}
                 <div className="relative z-10 w-full overflow-hidden rounded-tl-xl border-t border-l border-white/10 bg-[#0e0f12]">
                   <Image
@@ -90,7 +104,7 @@ export const FoundationAlreadyBuilt = () => {
       </div>
 
       {/* Lower Architectural Hatched Divider Band with Pentagon Corner Nodes */}
-      <div className="relative h-9 w-full border-b border-[#585858] bg-black">
+      <div className="full-width-divider relative h-9 w-full border-b border-[#585858] bg-black">
         <PentagonCornerNode className="left-0 -bottom-4" />
         <PentagonCornerNode className="left-full -bottom-4" />
         <div className="size-full bg-[repeating-linear-gradient(45deg,#585858_0,#585858_1px,transparent_1px,transparent_8px)]" />

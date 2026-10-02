@@ -36,8 +36,8 @@ const SECURITY_CARDS = [
 ] as const;
 
 export const SecurityFoundationSection = () => (
-  <section id="security" className="relative overflow-hidden border-b border-[#585858] bg-black">
-    {/* <div className="relative h-7 w-full border-b border-[#585858] bg-black">
+  <section id="security" className="relative  border-b border-[#585858] bg-black">
+    {/* <div className="full-width-divider relative h-7 w-full border-b border-[#585858] bg-black">
       <PentagonCornerNode className="left-0 top-0" />
       <PentagonCornerNode className="left-full top-0" />
       <div className="size-full bg-[repeating-linear-gradient(45deg,#585858_0,#585858_1px,transparent_1px,transparent_8px)]" />
@@ -109,7 +109,7 @@ export const SecurityFoundationSection = () => (
 
     <div className="relative h-[72px] w-full bg-black" />
 
-    <div className="relative h-9 w-full border-t border-[#585858] bg-black">
+    <div className="full-width-divider relative h-9 w-full border-t border-[#585858] bg-black">
       <PentagonCornerNode className="left-0 bottom-0" />
       <PentagonCornerNode className="left-full bottom-0" />
       <div className="size-full bg-[repeating-linear-gradient(45deg,#585858_0,#585858_1px,transparent_1px,transparent_8px)]" />

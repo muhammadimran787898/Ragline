@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { WorkflowAnimation } from '@/components/WorkflowAnimation';
 import { FeaturePip } from '@/components/FeaturePip';
 import { PentagonCornerNode } from '@/components/PentagonCornerNode';
 
@@ -47,15 +47,7 @@ export const AiFeatureWorkflow = () => {
 
       {/* Center Architecture Workflow Diagram */}
       <div className="relative my-8 px-4 sm:my-12 sm:px-8 lg:my-16 lg:px-10">
-        <Image
-          src="/brand/ai-feature-workflow.png"
-          alt="AI Application Architecture Flow"
-          width={1016}
-          height={300}
-          priority
-          unoptimized
-          className="mx-auto block h-auto w-full max-w-[820px] object-contain select-none"
-        />
+        <WorkflowAnimation />
       </div>
 
       {/* Bottom Section: Second Headline & Sub-description */}
@@ -121,7 +113,7 @@ export const AiFeatureWorkflow = () => {
       </div>
 
       {/* Lower Architectural Hatched Divider Band with Corner Nodes */}
-      <div className="relative h-9 w-full border-b border-[#585858] bg-black">
+      <div className="full-width-divider relative h-9 w-full border-b border-[#585858] bg-black">
         <PentagonCornerNode className="left-0 -bottom-4" />
         <PentagonCornerNode className="left-full -bottom-4" />
         <div className="size-full bg-[repeating-linear-gradient(45deg,#585858_0,#585858_1px,transparent_1px,transparent_8px)]" />

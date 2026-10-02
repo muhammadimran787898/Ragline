@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import { FooterAura } from '@/components/FooterAura';
 
 export const Footer = () => {
   return (
@@ -17,6 +19,7 @@ export const Footer = () => {
           `,
         }}
       />
+      <FooterAura />
       <div className="relative z-10 mx-auto w-full max-w-[1024px] px-8 pt-32 pb-16 sm:px-12 sm:pt-48 sm:pb-24">
         {/* Top Section: Links and Socials */}
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
@@ -101,12 +104,9 @@ export const Footer = () => {
 
         {/* Bottom Section: Logo and Copyright */}
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-2">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 0C16 8.83656 23.1634 16 32 16C23.1634 16 16 23.1634 16 32C16 23.1634 8.83656 16 0 16C8.83656 16 16 8.83656 16 0Z" fill="white"/>
-            </svg>
-            <span className="text-xl font-medium tracking-tight text-white">Enragline</span>
-          </div>
+          <Link href="#overview" aria-label="Enragline — back to overview" className="inline-flex w-fit items-center">
+            <Image src="/brand/navbar-logo.svg" alt="Enragline" width={540} height={110} unoptimized className="h-8 w-auto brightness-0 invert sm:h-9" />
+          </Link>
           <p className="text-[14px] text-white">
             © 2026 Enragline. All rights reserved.
           </p>

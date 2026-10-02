@@ -3,7 +3,7 @@ import { PentagonCornerNode } from './PentagonCornerNode';
 
 export const CallToAction = () => {
   return (
-    <section id="get-started" className="relative w-full bg-black overflow-hidden border-b border-[#585858]">
+    <section id="get-started" className="relative w-full bg-black  border-b border-[#585858]">
       {/* Background Subtle Gradient/Glow (Optional, based on the image there is a slight dark red/orange hue in the background at the bottom) */}
       <div className="absolute inset-0 z-0 pointer-events-none flex justify-center items-end opacity-40">
         <div className="h-[300px] w-[800px] rounded-full bg-[radial-gradient(ellipse_at_bottom,rgba(255,80,50,0.15)_0%,rgba(200,30,30,0.05)_40%,transparent_70%)] blur-3xl" />
@@ -29,7 +29,7 @@ export const CallToAction = () => {
       </div>
 
       {/* Bottom Hatched Divider */}
-      <div className="relative h-9 w-full border-t border-[#585858] bg-black">
+      <div className="full-width-divider relative h-9 w-full border-t border-[#585858] bg-black">
         <PentagonCornerNode className="left-0 bottom-0" />
         <PentagonCornerNode className="left-full bottom-0" />
         <div className="size-full bg-[repeating-linear-gradient(45deg,#585858_0,#585858_1px,transparent_1px,transparent_8px)]" />

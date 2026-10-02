@@ -45,7 +45,7 @@ export const Faq = () => {
   };
 
   return (
-    <section id="faq" className="relative w-full bg-black overflow-hidden border-t border-b border-[#585858]">
+    <section id="faq" className="relative w-full bg-black  border-t border-b border-[#585858]">
       {/* Header Area */}
       <div className="relative px-6 py-8 sm:px-8 sm:py-12 lg:px-10">
         <div className="mx-auto flex max-w-[1000px] flex-col justify-between gap-6 lg:flex-row lg:items-start">
@@ -99,7 +99,7 @@ export const Faq = () => {
       </div>
       
       {/* Bottom Hatched Divider */}
-      <div className="relative h-9 w-full border-t border-[#585858] bg-black">
+      <div className="full-width-divider relative h-9 w-full border-t border-[#585858] bg-black">
         <div className="size-full bg-[repeating-linear-gradient(45deg,#585858_0,#585858_1px,transparent_1px,transparent_8px)]" />
       </div>
     </section>
